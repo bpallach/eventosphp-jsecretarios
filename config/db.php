@@ -3,10 +3,7 @@
 class Conexion{
     public static function connect()
     {
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'root');
-        define('DB_PASS', '');
-        define('DB_NAME', 'events_jsecretarios');
+        require_once('conf.php');
 
         try
         {
