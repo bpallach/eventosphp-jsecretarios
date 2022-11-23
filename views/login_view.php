@@ -7,7 +7,7 @@
         <div class="d-flex align-items-center my-5">
             <div class="mx-auto" style="width: 450px;">
                 <h1>Iniciar Sesión</h1>
-                <form method="POST" action="../controllers/submit_login_controller.php">
+                <form method="POST" action="./../controllers/submit_login_controller.php">
                     <div class="mb-3">
                         <label class="form-label" for="username"><h5>Nombre de usuario</h5></label>
                         <input required type="text" class="form-control" name="username" id="username" placeholder="nombre de usuario">
