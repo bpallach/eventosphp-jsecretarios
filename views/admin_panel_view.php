@@ -93,7 +93,10 @@
                         <tr>
                             <td><?php echo $type_event['Id_tipo_acto']; ?></td>
                             <td><?php echo $type_event['Descripcion']; ?></td>
-                            <td><a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a></td>
+                            <td>
+                                <a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="/controllers/submit_delete_event_controller.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-trash3"></i></a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

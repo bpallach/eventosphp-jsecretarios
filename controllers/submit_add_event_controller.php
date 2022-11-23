@@ -1,5 +1,8 @@
 <?php 
-
+session_start();
+if($_SESSION['Id_tipo_usuario'] != 1) {
+    header('Location:/login.php');
+}
 require_once('../models/events_model.php');
 
 $data = [
@@ -17,7 +20,7 @@ $add = events_model::add_event($data);
 if($add){ ?>
     
     <script>
-        alert('Actualizado Correctamente');
+        alert('Añadido Correctamente');
         window.location.href = "/panel-de-administrador.php";
     </script>
     

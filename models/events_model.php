@@ -75,14 +75,33 @@ class events_model {
         return $query -> execute();        
     }
 
-    // public function add_evento($id)
-    // {
-    //     $bbdd = new Conexion();
-    //     $bbdd = $bbdd->connect();
-    //     $sql = 'INSERt * FROM `tipo_acto` WHERE `Id_tipo_acto` = ' . $id;
-    //     $query = $bbdd->prepare($sql);
-    //     $query -> execute();
-    //     $results = $query -> fetch(PDO::FETCH_ASSOC);
-    //     return $results;
-    // }
+    public function suscribe($eventId, $personId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $date = date('Y-m-d') . " " . date('h:i:s');
+        $sql = "INSERT INTO inscritos (Id_persona, id_acto, Fecha_inscripcion) VALUES ($personId, $eventId, '$date')";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+
+    public function unsuscribe($eventId, $personId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "DELETE FROM inscritos WHERE Id_persona = $personId AND id_acto = $eventId";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+
+    public function delete_event($eventId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "DELETE FROM tipo_acto WHERE Id_tipo_acto = $eventId";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+
+    
 }

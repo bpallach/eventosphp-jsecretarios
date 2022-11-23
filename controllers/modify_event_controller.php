@@ -1,5 +1,8 @@
 <?php 
-
+session_start();
+if($_SESSION['Id_tipo_usuario'] != 1) {
+    header('Location:/login.php');
+}
 $id = $_GET["id"];
 
 require_once('models/events_model.php');
