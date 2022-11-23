@@ -94,7 +94,7 @@ class events_model {
         return $query -> execute();
     }
 
-    public function delete_event($eventId)
+    public function delete_type_event($eventId)
     {
         $bbdd = new Conexion();
         $bbdd = $bbdd->connect();
@@ -103,5 +103,63 @@ class events_model {
         return $query -> execute();
     }
 
+    public function delete_event($eventId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "DELETE FROM actos WHERE Id_acto = $eventId";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+
+    public function get_inscribeds()
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = 'SELECT * FROM inscritos';
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $results = $query -> fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function get_event_name($eventId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "SELECT Titulo FROM actos WHERE Id_acto = $eventId";
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function delete_inscribed_event($inscribedId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "DELETE FROM inscritos WHERE Id_inscripcion = $inscribedId";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+    public function get_inscribed($inscribedId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "SELECT * FROM inscritos WHERE Id_inscripcion = $inscribedId";
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $results = $query -> fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public static function update_inscribed($Id_inscripcion, $id_acto, $Id_persona)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "UPDATE inscritos SET Id_persona=$Id_persona, id_acto=$id_acto  WHERE Id_inscripcion=$Id_inscripcion";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();        
+    }
     
 }

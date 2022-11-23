@@ -23,7 +23,7 @@
 
                 <div class="form-group my-3">
                     <label for="hora">Hora:</label>
-                    <input required type="time" step="2" class="form-control" required id="hora" name="hora">
+                    <input required type="time" step="1" class="form-control" required id="hora" name="hora">
                 </div>
 
                 <div class="form-group my-3">

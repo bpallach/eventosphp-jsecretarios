@@ -128,5 +128,30 @@ class user_model {
             die($ex->getMessage());
         }
     }
+
+    public function get_persona($Id_persona) {
+     
+        try {
+            $bbdd = new Conexion();
+            $bbdd = $bbdd->connect();
+            $sql = "SELECT Nombre, Apellido1 FROM personas WHERE Id_persona = $Id_persona";
+            $query = $bbdd->prepare($sql);
+            $query -> execute();
+            $results = $query -> fetch(PDO::FETCH_ASSOC);
+            return $results;
+     
+        } catch (Exception $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    public function delete_user($userId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "DELETE FROM usuarios WHERE Id_usuario = $userId";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
     
 }

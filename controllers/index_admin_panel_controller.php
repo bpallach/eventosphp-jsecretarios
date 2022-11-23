@@ -11,6 +11,7 @@ require_once('./models/user_model.php');
 
 $event = new events_model();
 $events = $event->get_events();
+$inscribeds = $event->get_inscribeds();
 
 $user = new user_model();
 $users = $user->get_users();

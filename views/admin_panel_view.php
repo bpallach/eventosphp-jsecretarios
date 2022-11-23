@@ -32,7 +32,10 @@
                             <td><?php echo $event['Num_asistentes']; ?></td>
                             <td><?php echo $event['Fecha']; ?></td>
                             <td><?php echo $event['Hora']; ?></td>
-                            <td><a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a></td>
+                            <td>
+                                <a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="/controllers/submit_delete_event_controller.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-trash3"></i></a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -65,7 +68,10 @@
                             <td><?php echo $user['Password']; ?></td>
                             <td><?php echo $user['Id_Persona']; ?></td>
                             <td><?php echo $user['Id_tipo_usuario']; ?></td>
-                            <td><a href="/editar-usuario.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-pencil-square"></i></a></td>
+                            <td>
+                                <a href="/editar-usuario.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="/controllers/submit_delete_user_controller.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-trash3"></i></a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -94,8 +100,48 @@
                             <td><?php echo $type_event['Id_tipo_acto']; ?></td>
                             <td><?php echo $type_event['Descripcion']; ?></td>
                             <td>
-                                <a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a>
-                                <a class="text-danger" href="/controllers/submit_delete_event_controller.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-trash3"></i></a>
+                                <a href="/editar-evento.php?id=<?php echo $type_event['Id_tipo_acto'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="/controllers/submit_delete_type_event_controller.php?id=<?php echo $type_event['Id_tipo_acto'];?>"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="admin-panel-table admin-type-events my-4">
+
+            <div class="d-flex align-items-center gap-4">
+                <h2 class="text-primary mb-3">Inscritos</h2>
+                <a class="btn btn-primary" href="/nuevo-inscrito.php">Inscribir usuario</a>
+            </div>
+
+            <table class="table table-striped-columns table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id inscripción</th>
+                        <th>Persona</th>
+                        <th>Acto</th>
+                        <th>Fecha Inscripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    $user = new user_model();
+                    $event = new events_model();
+                    foreach($inscribeds as $inscribed) : 
+                        $personaName = $user->get_persona($inscribed['Id_persona']);
+                        $eventName = $event->get_event_name($inscribed['id_acto'])
+                    ?>
+                        <tr>
+                            <td><?php echo $inscribed['Id_inscripcion']; ?></td>
+                            <td><?php echo $personaName['Nombre'] . " " . $personaName['Apellido1']; ?></td>
+                            <td><?php echo $eventName['Titulo']; ?></td>
+                            <td><?php echo $inscribed['Fecha_inscripcion']; ?></td>
+                            <td>
+                                <a href="/editar-inscrito.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="/controllers/submit_delete_inscribed_controller.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
