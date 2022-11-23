@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['status'])){
     session_destroy();
-    header('Location:/login.php');
+    header('Location:./login.php');
 }
 
 require_once('./models/events_model.php');
