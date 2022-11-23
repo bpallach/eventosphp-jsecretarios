@@ -10,7 +10,6 @@
 <body>
     <div class="container vh-100">
     <div class="row vh-100 align-items-center">
-    <!-- <div class="d-flex flex-column"> -->
     <div class="mx-auto" style="width: 450px;">
         <form>
             <div class="mb-3">
@@ -29,7 +28,6 @@
         </form>
     </div>
     </div>
-    <!-- </div> -->
     </div>
 </body>
 </html>
