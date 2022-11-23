@@ -73,7 +73,7 @@ class user_model {
            if($_SESSION['Id_tipo_usuario'] == 1){
                 header('Location:/panel-de-administrador.php');
             }else{
-                header('Location:/index.php');
+                header('Location:./index.php');
             }
 
         }else{

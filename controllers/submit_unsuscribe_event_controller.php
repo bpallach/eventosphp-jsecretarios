@@ -9,4 +9,4 @@ $event = new events_model();
 
 $unsuscribe = $event->unsuscribe($eventId, $personId);
 
-header('Location:/index.php');
+header('Location:./index.php');

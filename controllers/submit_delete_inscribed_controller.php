@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if($_SESSION['Id_tipo_usuario'] != 1) {
-    header('Location:/login.php');
+    header('Location:./login.php');
 }
 
 require_once('../models/events_model.php');

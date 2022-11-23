@@ -9,5 +9,5 @@ $event = new events_model();
 
 $suscribe = $event->suscribe($eventId, $personId);
 
-header('Location:/index.php');
+header('Location:./index.php');
 
