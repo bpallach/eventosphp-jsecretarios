@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+<?php require('partials/head.php') ?>
 <body>
-    <div class="container vh-100">
-    <div class="row vh-100 align-items-center">
-    <div class="mx-auto" style="width: 450px;">
-        <form action="./controllers/submit_modify_profile_controller.php" method="post">
-            <div class="mb-3">
-                <label class="form-label"><h5>Nombre</h5></label>
-                <input type="nombre" class="form-control" id="CambioNombre" placeholder="Introduce tu nuevo nombre">
+    <?php require('partials/header.php') ?>
+    <main class="container">
+        <div class="d-flex align-items-center my-5">
+            <div class="mx-auto" style="width: 450px;">
+                <h1 class="mb-4">Mi perfil: <?php echo $usuario['Username'] ?></h1>
+                <form action="./controllers/submit_modify_profile_controller.php" method="post">
+                    <div class="mb-3">
+                        <label class="form-label"><h5>Nombre de usuario</h5></label>
+                        <input required type="nombre" class="form-control" id="username" name="username" placeholder="Introduce tu nuevo nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><h5>Contraseña</h5></label>
+                        <input required type="contraseña" class="form-control" id="password" name="password" placeholder="Introduce tu nueva contraseña">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-primary">Guardar cambios</button>
+                </form>
+                </form>
             </div>
-            <div class="mb-3">
-            <label class="form-label"><h5>Correo electrónico</h5></label>
-            <input type="correo" class="form-control" id="CambioCorreo" placeholder="Introduce tu nuevo correo electrónico">
-            </div>
-            <div class="mb-3">
-            <label class="form-label"><h5>Contraseña</h5></label>
-            <input type="contraseña" class="form-control" id="CambioContraseña" placeholder="Introduce tu nueva contraseña">
-            </div>
-            <button type="Guardar cambios" class="btn btn-outline-primary">Guardar cambios</button>
-        </form>
-    </div>
-    </div>
-    </div>
+        </div>
+    </main>
+    <?php require('partials/footer.php') ?>
 </body>
 </html>

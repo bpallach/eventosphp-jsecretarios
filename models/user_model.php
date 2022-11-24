@@ -178,4 +178,14 @@ class user_model {
         return $results['Id_persona'];
     }
 
+    public static function update_user_credentials($username, $password, $idUsuario) : bool
+    {
+        
+
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "UPDATE usuarios SET Username='$username', Password='$password' WHERE Id_usuario=$idUsuario";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();    
+    }
 }
