@@ -82,7 +82,6 @@
 
             <div class="d-flex align-items-center gap-4">
                 <h2 class="text-primary mb-3">Tipos de actos</h2>
-                <a class="btn btn-primary" href="/nuevo-acto.php">Añadir tipo de acto</a>
             </div>
 
             <table class="table table-striped-columns table-bordered">
