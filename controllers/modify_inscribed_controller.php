@@ -5,7 +5,7 @@ if($_SESSION['Id_tipo_usuario'] != 1) {
 }
 $id = $_GET["id"];
 
-require_once('models/events_model.php');
+require_once('./models/events_model.php');
 require_once('./models/user_model.php');
 
 $event = new events_model();
