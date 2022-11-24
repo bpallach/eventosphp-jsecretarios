@@ -12,7 +12,7 @@ if(empty($event)){
     <main class="container">
         <section class="events-table my-5 shadow p-3 mb-5 bg-white rounded">
             <h2 class="text-primary">Editar evento: <?php echo $event['Titulo']; ?></h2>
-            <form action="../controllers/submit_modify_event_controller.php" method="post">
+            <form action="./controllers/submit_modify_event_controller.php" method="post">
             
                 <div class="form-group my-3">
                     <label for="titulo">Titulo:</label>

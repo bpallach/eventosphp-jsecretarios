@@ -17,7 +17,7 @@ $user = new user_model;
             ?>
             <div class="card col-sm-3 col-md-6 col-lg-4">
                 <div class="card-body">
-                    <a href="/evento.php?id=<?php echo $event['Id_acto']; ?>">
+                    <a href="./evento.php?id=<?php echo $event['Id_acto']; ?>">
                         <h5 class="card-title"><?php echo $event['Titulo']; ?></h5>
                     </a>
                     <p class="card-text"><strong><?php echo $event['Descripcion_corta']; ?></strong></p>
@@ -25,9 +25,9 @@ $user = new user_model;
                     <?php 
                     
                     if($suscribed["COUNT(id_acto)"] > 0){ ?>
-                        <a href="../controllers/submit_unsuscribe_event_controller.php?id=<?php echo $event['Id_acto']; ?>" class="btn btn-danger">Desuscribirse</a>
+                        <a href="./controllers/submit_unsuscribe_event_controller.php?id=<?php echo $event['Id_acto']; ?>" class="btn btn-danger">Desuscribirse</a>
                     <?php }else{ ?>
-                        <a href="../controllers/submit_suscribe_event_controller.php?id=<?php echo $event['Id_acto']; ?>" class="btn btn-success">Inscribirse</a>
+                        <a href="./controllers/submit_suscribe_event_controller.php?id=<?php echo $event['Id_acto']; ?>" class="btn btn-success">Inscribirse</a>
                     <?php }
 
                     ?>

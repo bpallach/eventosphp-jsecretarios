@@ -11,7 +11,7 @@
     <div class="container vh-100">
     <div class="row vh-100 align-items-center">
     <div class="mx-auto" style="width: 450px;">
-        <form>
+        <form action="./controllers/submit_modify_profile_controller.php" method="post">
             <div class="mb-3">
                 <label class="form-label"><h5>Nombre</h5></label>
                 <input type="nombre" class="form-control" id="CambioNombre" placeholder="Introduce tu nuevo nombre">

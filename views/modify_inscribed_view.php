@@ -9,7 +9,7 @@
         </section>
         <section class="users-table mt-4">
             <h2 class="text-primary mb-3">Editar inscrito: <?php echo $id; ?></h2>
-            <form action="../controllers/submit_modify_inscribed_controller.php" method="post">
+            <form action="./controllers/submit_modify_inscribed_controller.php" method="post">
                 <div class="form-group my-3">
                     <label for="Id_persona" id="Id_persona">Tipo de acto:</label>
                     <select name="Id_persona" required class="form-control">

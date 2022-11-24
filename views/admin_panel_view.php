@@ -9,7 +9,7 @@
 
             <div class="d-flex align-items-center gap-4">
                 <h2 class="text-primary mb-3">Tabla de Actos</h2>
-                <a class="btn btn-primary" href="/nuevo-acto.php">Añadir acto</a>
+                <a class="btn btn-primary" href="./nuevo-acto.php">Añadir acto</a>
             </div>
 
             <table class="table table-striped-columns table-bordered">
@@ -33,8 +33,8 @@
                             <td><?php echo $event['Fecha']; ?></td>
                             <td><?php echo $event['Hora']; ?></td>
                             <td>
-                                <a href="/editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a>
-                                <a class="text-danger" href="/controllers/submit_delete_event_controller.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-trash3"></i></a>
+                                <a href="./editar-evento.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="./controllers/submit_delete_event_controller.php?id=<?php echo $event['Id_acto'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -69,7 +69,7 @@
                             <td><?php echo $user['Id_Persona']; ?></td>
                             <td><?php echo $user['Id_tipo_usuario']; ?></td>
                             <td>
-                                <a href="/editar-usuario.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a href="./editar-usuario.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-pencil-square"></i></a>
                                 <a class="text-danger" href="/controllers/submit_delete_user_controller.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
@@ -100,8 +100,7 @@
                             <td><?php echo $type_event['Id_tipo_acto']; ?></td>
                             <td><?php echo $type_event['Descripcion']; ?></td>
                             <td>
-                                <a href="/editar-evento.php?id=<?php echo $type_event['Id_tipo_acto'];?>"><i class="bi bi-pencil-square"></i></a>
-                                <a class="text-danger" href="/controllers/submit_delete_type_event_controller.php?id=<?php echo $type_event['Id_tipo_acto'];?>"><i class="bi bi-trash3"></i></a>
+                                <a class="text-danger" href="./controllers/submit_delete_type_event_controller.php?id=<?php echo $type_event['Id_tipo_acto'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -113,7 +112,7 @@
 
             <div class="d-flex align-items-center gap-4">
                 <h2 class="text-primary mb-3">Inscritos</h2>
-                <a class="btn btn-primary" href="/nuevo-inscrito.php">Inscribir usuario</a>
+                <a class="btn btn-primary" href="./nuevo-inscrito.php">Inscribir usuario</a>
             </div>
 
             <table class="table table-striped-columns table-bordered">
@@ -140,8 +139,8 @@
                             <td><?php echo $eventName['Titulo']; ?></td>
                             <td><?php echo $inscribed['Fecha_inscripcion']; ?></td>
                             <td>
-                                <a href="/editar-inscrito.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-pencil-square"></i></a>
-                                <a class="text-danger" href="/controllers/submit_delete_inscribed_controller.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-trash3"></i></a>
+                                <a href="./editar-inscrito.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-pencil-square"></i></a>
+                                <a class="text-danger" href="./controllers/submit_delete_inscribed_controller.php?id=<?php echo $inscribed['Id_inscripcion'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

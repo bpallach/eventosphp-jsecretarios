@@ -15,7 +15,7 @@ if($delete){ ?>
     
     <script>
         alert('Eliminado correctamente');
-        window.location.href = "/panel-de-administrador.php";
+        window.location.href = "../panel-de-administrador.php";
     </script>
     
 <?php }else{ ?>

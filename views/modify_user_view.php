@@ -11,7 +11,7 @@ if(empty($user)){
     <?php require('partials/header.php') ?>
     <main class="container">
         <section class="users-table">
-            <form action="../controllers/submit_modify_user_controller.php" method="post">
+            <form action="./controllers/submit_modify_user_controller.php" method="post">
 
                 <div class="form-group my-3">
                     <label for="username">Username:</label>

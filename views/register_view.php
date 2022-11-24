@@ -7,7 +7,7 @@
         <div class="d-flex align-items-center my-5">
             <div class="mx-auto" style="width: 450px;">
                 <h1>Registrarse</h1>
-                <form>
+                <form action="./controllers/submit_register_controller.php" method="post">
                     <div class="mb-3">
                         <label class="form-label"><h5>Nombre</h5></label>
                         <input required type="text" class="form-control" id="CambioNombre" placeholder="nombre">

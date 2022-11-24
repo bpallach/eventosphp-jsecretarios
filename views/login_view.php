@@ -19,7 +19,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-outline-primary">Iniciar Sesión</button>
-                    <a href="/registrarse.php" class="btn btn-danger">Registrarse</a>
+                    <a href="./registrarse.php" class="btn btn-danger">Registrarse</a>
 
                     <?php 
                         if(isset($_GET['e'])){ ?>

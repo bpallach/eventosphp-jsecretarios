@@ -5,11 +5,11 @@
     <?php require('partials/header.php') ?>
     <main class="container">
         <section class="mt-5">
-            <a class="btn btn-primary" href="/panel-de-administrador.php"><i class="bi bi-arrow-left"></i> Volver al panel</a>
+            <a class="btn btn-primary" href="./panel-de-administrador.php"><i class="bi bi-arrow-left"></i> Volver al panel</a>
         </section>
         <section class="users-table mt-4">
             <h2 class="text-primary mb-3">Añadir acto</h2>
-            <form action="../controllers/submit_add_event_controller.php" method="post">
+            <form action="./controllers/submit_add_event_controller.php" method="post">
 
                 <div class="form-group my-3">
                     <label for="Titulo">Titulo:</label>

@@ -15,7 +15,7 @@ $update = $event->update_inscribed($Id_inscripcion,  $id_acto, $Id_persona);
 if($update){ ?>
     <script>
         alert('Actualizado Correctamente');
-        window.location.href = "/panel-de-administrador.php";
+        window.location.href = "../panel-de-administrador.php";
     </script>
 <?php }else{ ?>
     <script>

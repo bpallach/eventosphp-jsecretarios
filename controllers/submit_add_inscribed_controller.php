@@ -14,7 +14,7 @@ $suscribe = $event->suscribe($id_acto, $Id_persona);
 if($suscribe){ ?>
     <script>
         alert('Añadido Correctamente');
-        window.location.href = "/panel-de-administrador.php";
+        window.location.href = "../panel-de-administrador.php";
     </script>
     
 <?php }else{ ?>

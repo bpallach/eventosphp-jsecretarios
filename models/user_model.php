@@ -71,13 +71,13 @@ class user_model {
             $_SESSION['Id_tipo_usuario'] = $user['Id_tipo_usuario'];
             
            if($_SESSION['Id_tipo_usuario'] == 1){
-                header('Location:/panel-de-administrador.php');
+                header('Location:../panel-de-administrador.php');
             }else{
-                header('Location:./index.php');
+                header('Location:../index.php');
             }
 
         }else{
-            header('Location: /login.php?e=Error de inicio de sesión');
+            header('Location: ../login.php?e=Error de inicio de sesión');
         }
     }
     
