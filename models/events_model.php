@@ -58,6 +58,17 @@ class events_model {
         return $results;
     }
 
+    public function get_type_event_name($eventId)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "SELECT Descripcion FROM tipo_acto  WHERE Id_tipo_acto = $eventId";
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
     public static function add_event(array $data)
     {
         $titulo = $data["titulo"];
