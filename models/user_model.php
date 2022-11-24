@@ -49,7 +49,7 @@ class user_model {
     {
         $bbdd = new Conexion();
         $bbdd = $bbdd->connect();
-        $sql = 'SELECT * FROM Personas';
+        $sql = 'SELECT * FROM personas';
         $query = $bbdd->prepare($sql);
         $query -> execute();
         $results = $query -> fetchAll(PDO::FETCH_ASSOC);
@@ -154,4 +154,28 @@ class user_model {
         return $query -> execute();
     }
     
+    public function create_user($Nombre, $Username, $Apellido, $Apellido2, $Password)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "INSERT INTO personas (Nombre, Apellido1, Apellido2) VALUES ('$Nombre', '$Apellido', '$Apellido2')";
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $Id_Persona = $this->get_persona_by_name($Nombre, $Apellido, $Apellido2);
+        $sql = "INSERT INTO usuarios (Username, Password, Id_Persona, Id_tipo_usuario) VALUES ('$Username', '$Password', '$Id_Persona', 2)";
+        $query = $bbdd->prepare($sql);
+        return $query -> execute();
+    }
+
+    public function get_persona_by_name($Nombre, $Apellido, $Apellido2)
+    {
+        $bbdd = new Conexion();
+        $bbdd = $bbdd->connect();
+        $sql = "SELECT Id_persona FROM personas WHERE Nombre = '$Nombre' AND Apellido1 = '$Apellido' AND Apellido2 = '$Apellido2'";
+        $query = $bbdd->prepare($sql);
+        $query -> execute();
+        $results = $query -> fetch(PDO::FETCH_ASSOC);
+        return $results['Id_persona'];
+    }
+
 }
