@@ -70,7 +70,7 @@
                             <td><?php echo $user['Id_tipo_usuario']; ?></td>
                             <td>
                                 <a href="./editar-usuario.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-pencil-square"></i></a>
-                                <a class="text-danger" href="/controllers/submit_delete_user_controller.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-trash3"></i></a>
+                                <a class="text-danger" href="./controllers/submit_delete_user_controller.php?id=<?php echo $user['Id_usuario'];?>"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
